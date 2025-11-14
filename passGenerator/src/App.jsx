@@ -10,16 +10,27 @@ function App() {
 
   const randomPassGen = useCallback(
     () => {
-      first
+      let pass = ""
+      let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+
+      if(isNumber) str += "1234567890"
+      if(isChar) str += "!@#$%^&()_"
+      
+      for(let i = 1; i <= str.lenght; i++){
+        let charIndex = Math.floor(Math.random() * str.lenght + 1)
+
+        pass = str.charAt(char)
+      }
     },
-    [second],
+    [lenght, isNumber, isChar, setPassword],
   )
   
+  console.log(randomPassGen)
  
   return (
     <>
       <div id="passCard">
-        <input type="text" name="Password-input" value="">
+        {/* <input type="text" name="Password-input" value=""> */}
       </div>
    </>
   )
